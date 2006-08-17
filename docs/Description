@@ -1,0 +1,38 @@
+INTENT
+======
+Set up a CPAN mirror that, rather than tarballs, serves binaries as
+used by varies package managers like RPM, MDK, apt, ports, etc.
+
+
+CLIENTS
+=======
+The use of this mirror would be totally outside the scope of the 
+current CPAN, other than that it shares it's name, and similar content.
+All the work installing these packages should be done by the package
+managers of the various operating systems.
+This mirror is merely a 'source' to add to the configuration of the
+package manager to retrieve perl modules from.
+
+CONTENT
+=======
+Content must be provided, and can be done so easily by having build
+farms (or volunteers) upload converted distributions. Automation can
+be done quite easily using CPANPLUS and it's Dist::FOO output filter.
+
+The content should focus primarily on being installable via a package
+manager, and only secondarily try to adhere to all the administrative
+requirements of such packagemanagers (ie, licenses, upstream authors,
+changelogs, etc)
+
+Each distribution on CPAN will have a set of binary releases; one per
+set of operating system and configuration options.
+
+TODO
+====
+* write CPANPLUS::Dist::* plugins to facilitate package managers
+    (ports is done, par and deb are close)
+* set up a dir structure with indexes and the like for every supported
+    package manager
+* set up buildfarms (or volunteers) to create these packages
+* find a way to upload packages to the server
+
